@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>io.github.leo3418</groupId>
+    <artifactId>jar-relocator-cli</artifactId>
+    <version>0.0.0</version>
+    <!--
+    When bumping the version, please also change the version
+    in the @Command annotation for the JarRelocatorCli class
+    -->
+
+    <name>jar-relocator-cli</name>
+    <description>A command-line interface for jar-relocator</description>
+    <inceptionYear>2022</inceptionYear>
+    <licenses>
+        <license>
+            <name>GPL-3.0-or-later</name>
+            <comments>GNU General Public License v3.0 or later</comments>
+            <url>https://www.gnu.org/licenses/gpl-3.0.html</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <id>Leo3418</id>
+            <name>Yuan Liao</name>
+            <email>liaoyuan@gmail.com</email>
+            <url>https://leo3418.github.io/</url>
+        </developer>
+    </developers>
+
+    <dependencies>
+        <dependency>
+            <groupId>me.lucko</groupId>
+            <artifactId>jar-relocator</artifactId>
+            <version>[1.5,)</version>
+        </dependency>
+        <dependency>
+            <groupId>info.picocli</groupId>
+            <artifactId>picocli</artifactId>
+            <version>[4.6.2,)</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>
+                                io.github.leo3418.jarrelocatorcli.JarRelocatorCli
+                            </mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

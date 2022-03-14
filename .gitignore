@@ -1,0 +1,19 @@
+# Maven
+target/
+
+# Eclipse
+bin/
+.settings/
+*.launch
+.classpath
+.metadata
+.project
+
+# IntelliJ IDEA
+classes/
+lib/
+out/
+.idea/
+*.ipr
+*.iws
+*.iml
