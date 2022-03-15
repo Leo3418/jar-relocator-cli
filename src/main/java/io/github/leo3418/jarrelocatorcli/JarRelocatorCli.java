@@ -35,7 +35,7 @@ import java.util.Collections;
 import java.util.concurrent.Callable;
 
 /**
- * The main class for this program.
+ * The main class for the {@code jar-relocator-cli} program.
  */
 @Command(
         name = "jar-relocator-cli",
@@ -53,7 +53,7 @@ import java.util.concurrent.Callable;
 public final class JarRelocatorCli implements Callable<Void> {
     /**
      * The pattern to match in the relocation rule passed to
-     * {@code jar-relocator.}
+     * {@code jar-relocator}.
      */
     @Parameters(
             index = "0",
@@ -63,7 +63,7 @@ public final class JarRelocatorCli implements Callable<Void> {
     private String pattern;
 
     /**
-     * The pattern to relocated to in the relocation rule passed to
+     * The pattern to relocate to in the relocation rule passed to
      * {@code jar-relocator}.
      */
     @Parameters(
@@ -89,8 +89,9 @@ public final class JarRelocatorCli implements Callable<Void> {
      * The format string used to determine an input JAR's corresponding output
      * JAR's file name.  The string must be able to be passed to the
      * {@link String#format(String, Object...)} method as the first argument
-     * without causing any exceptions.  Exactly one argument is honored by the
-     * format string, which is an input JAR's file name without the extension.
+     * without causing any exceptions, assuming that exactly one extra argument
+     * will be passed in as varargs, which is an input JAR's file name without
+     * the extension.
      */
     @Option(
             names = {"-o", "--output-format"},
@@ -135,8 +136,7 @@ public final class JarRelocatorCli implements Callable<Void> {
     private boolean verboseRequested;
 
     /**
-     * Allows only members in this class itself to construct new instances of
-     * this class.
+     * Allows only members in this class to construct new instances of it.
      */
     private JarRelocatorCli() {
     }
